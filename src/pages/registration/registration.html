@@ -1,0 +1,47 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>
+            Registration Page
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h1>Registration</h1>
+    <ion-list>
+        <ion-item>
+            <ion-label floating>Name</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Date of Birth</ion-label>
+            <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Email</ion-label>
+            <ion-input type="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating  >Username</ion-label>
+            <ion-input type="text" [(ngModel)]="username"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Password</ion-label>
+            <ion-input type="password" [(ngModel)]='password' ></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Confirm Password</ion-label>
+            <ion-input type="password"[(ngModel)]='password2'></ion-input>
+        </ion-item>
+
+    </ion-list>
+
+    <div padding>
+        <button ion-button block class="safari" (click)="checkPassword()"> Register </button>
+    </div>
+</ion-content>
