@@ -14,5 +14,10 @@
 
 
 <ion-content padding>
-
+    <ion-tabs>
+        <ion-tab [root] = "exploreRoot" tabTitle="Tab1" [root]="tab1" [rootParams]="jwt"></ion-tab>
+        <ion-tab [root] = "paymentRoot" tabTitle="Tab2" [root]="tab2" [rootParams]="jwt"></ion-tab>
+        <ion-tab [root] = "portfolioRoot" tabTitle="Tab3" [root]="tab3" [rootParams]="jwt"></ion-tab>
+        <ion-tab [root] = "profileRoot" tabTitle="Tab4" [root]="tab4" [rootParams]="jwt"></ion-tab>
+    </ion-tabs>
 </ion-content>

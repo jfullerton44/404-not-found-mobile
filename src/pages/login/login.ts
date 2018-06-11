@@ -29,8 +29,7 @@ export class LoginPage {
       })
       .subscribe(
         result => {
-          console.log(result);
-
+          console.log('result', result);
           // Our username and password (on this) should have data from the user
           this.navCtrl.setRoot(TabsPage, {
             jwt: result

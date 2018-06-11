@@ -10,9 +10,11 @@ import { App } from 'ionic-angular';
 })
 export class ProfilePage {
   username: string;
+  jwt:string;
 
   constructor(public navCtrl: NavController , public navParams: NavParams,private app:App) {
-    this.username = this.navParams.get('username');
+    this.jwt = this.navParams.get('jwt');
+    console.log('passed params',navParams.data);
   }
 
   navigateToHome(){

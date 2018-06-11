@@ -21,18 +21,19 @@ import { PortfolioPage } from '../portfolio/portfolio';
     <ion-tab tabIcon="person" tabTitle="Profile" [root]="tab4"></ion-tab>
   </ion-tabs>`
 })
-export class TabsPage {
 
-  tab1: any;
-  tab2: any;
-  tab3: any;
-  tab4: any;
+export class TabsPage {
+  exploreRoot = ExplorePage;
+  paymentRoot = PaymentPage;
+  portfolioRoot = PortfolioPage;
+  profileRoot = ProfilePage;
+  jwt={
+    name: "test"
+  };
+  
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-      this.tab1 = ExplorePage;
-      this.tab2 = PaymentPage;
-      this.tab3 = PortfolioPage;
-      this.tab4 = ProfilePage;
+      
   }
 
 }
