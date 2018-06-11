@@ -10,6 +10,7 @@ import { Http } from '@angular/http';
 export class LoginPage {
   public username: string;
   public password: string;
+  public jwt: string
 
   constructor( public navCtrl: NavController,
     public navParams: NavParams,
@@ -28,14 +29,12 @@ export class LoginPage {
       })
       .subscribe(
         result => {
-          console.log(result);
-
+          console.log('result', result);
           // Our username and password (on this) should have data from the user
           this.navCtrl.setRoot(TabsPage, {
-            username: this.username
+            jwt: result
           });
         },
-
         error => {
           console.log(error);
         }
