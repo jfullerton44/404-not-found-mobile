@@ -10,18 +10,23 @@
     <h1>Registration</h1>
     <ion-list>
         <ion-item>
-            <ion-label floating>Name</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-label floating>First Name</ion-label>
+            <ion-input type="text" [(ngModel)]="firstName"></ion-input>
         </ion-item>
 
         <ion-item>
-            <ion-label floating>Date of Birth</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-label floating>Last Name</ion-label>
+            <ion-input type="text" [(ngModel)]="lastName"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Date of Birth (YYYYMMDD)</ion-label>
+            <ion-input type="text" [(ngModel)]="dob"></ion-input>
         </ion-item>
 
         <ion-item>
             <ion-label floating>Email</ion-label>
-            <ion-input type="email"></ion-input>
+            <ion-input type="email" [(ngModel)]="email"></ion-input>
         </ion-item>
 
         <ion-item>

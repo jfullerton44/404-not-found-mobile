@@ -1,19 +1,46 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'login.html'
 })
 export class LoginPage {
-  username: string;
+  public username: string;
+  public password: string;
 
-  constructor(public navCtrl: NavController) {
+  constructor( public navCtrl: NavController,
+    public navParams: NavParams,
+    public http: Http
+) {
 
   }
   navigateToProfile(){
     this.navCtrl.setRoot(TabsPage,{username: this.username})
   }
+  login() {
+    this.http
+      .post("http://localhost:3000/login", {
+        username: this.username,
+        password: this.password
+      })
+      .subscribe(
+        result => {
+          console.log(result);
 
+          // Our username and password (on this) should have data from the user
+          this.navCtrl.setRoot(TabsPage, {
+            username: this.username
+          });
+        },
+
+        error => {
+          console.log(error);
+        }
+      );
+  }
 }
+
+

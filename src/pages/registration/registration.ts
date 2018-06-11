@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'page-home',
@@ -10,7 +11,15 @@ export class RegistrationPage {
   username: string;
   password: string;
   password2: string;
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  firstName: string;
+  lastName: string;
+  email: string;
+  dob: string;
+  
+  constructor(public navCtrl: NavController,
+    public navParams: NavParams,
+    public http: Http
+  ) {
   }
 
   navigateToTabs(){
@@ -22,7 +31,35 @@ export class RegistrationPage {
       alert('Passwords do not match');
     }
     else{
-      this.navigateToTabs();
+      this.register();
     }
+  }
+
+  register(){
+    this.http
+      .post("http://localhost:3000/reg/users", {
+        username: this.username,
+        password: this.password,
+        email: this.email,
+        firstName: this.firstName,
+        lastName: this.lastName,
+        dob: this.dob
+
+      })
+      .subscribe(
+        result => {
+          console.log(result);
+
+          // Our username and password (on this) should have data from the user
+          this.navCtrl.setRoot(TabsPage, {
+            username: this.username
+          });
+        },
+
+        error => {
+          console.log(error);
+        }
+      );
+
   }
 }
