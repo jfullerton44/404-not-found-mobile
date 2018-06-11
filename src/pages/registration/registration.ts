@@ -18,7 +18,8 @@ export class RegistrationPage {
   
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
-    public http: Http
+    public http: Http,
+    public jwt: string
   ) {
   }
 
@@ -52,7 +53,7 @@ export class RegistrationPage {
 
           // Our username and password (on this) should have data from the user
           this.navCtrl.setRoot(TabsPage, {
-            username: this.username
+            jwt: result
           });
         },
 
