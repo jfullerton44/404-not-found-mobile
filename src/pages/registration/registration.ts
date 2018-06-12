@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { Http } from '@angular/http';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-home',
@@ -19,7 +20,9 @@ export class RegistrationPage {
   
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
-    public http: Http
+    public http: Http,
+    private storage: Storage
+
   ) {
   }
 
@@ -32,11 +35,11 @@ export class RegistrationPage {
       alert('Passwords do not match');
     }
     else{
-      this.register();
+      this.register(this.storage);
     }
   }
 
-  register(){
+  register(storage: Storage){
     this.http
       .post("http://localhost:3000/reg/users", {
         username: this.username,
@@ -49,7 +52,9 @@ export class RegistrationPage {
       })
       .subscribe(
         result => {
-          console.log(result);
+          let token = result.json().token;
+          console.log('result', token);
+          storage.set('jwt', token);
 
           // Our username and password (on this) should have data from the user
           this.navCtrl.setRoot(TabsPage, {
