@@ -53,7 +53,6 @@ export class RegistrationPage {
       .subscribe(
         result => {
           let token = result.json().token;
-          console.log('result', token);
           storage.set('jwt', token);
 
           // Our username and password (on this) should have data from the user
