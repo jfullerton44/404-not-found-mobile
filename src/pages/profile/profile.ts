@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { ExplorePage } from '../explore/explore';
 import { HomePage } from '../home/home';
 import { App } from 'ionic-angular';
+import { Storage } from '@ionic/storage'
 
 @Component({
   selector: 'page-home',
@@ -12,9 +13,10 @@ export class ProfilePage {
   username: string;
   jwt:string;
 
-  constructor(public navCtrl: NavController , public navParams: NavParams,private app:App) {
-    this.jwt = this.navParams.get('jwt');
-    console.log('passed params',navParams.data);
+  constructor(public navCtrl: NavController , public navParams: NavParams,private app:App, private storage: Storage) {
+    storage.get('jwt').then((val) => {
+      console.log('Your jwt is', val);
+    });
   }
 
   navigateToHome(){

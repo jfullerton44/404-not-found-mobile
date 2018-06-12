@@ -15,11 +15,11 @@ export class RegistrationPage {
   lastName: string;
   email: string;
   dob: string;
+  jwt: string;
   
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
-    public http: Http,
-    public jwt: string
+    public http: Http
   ) {
   }
 
