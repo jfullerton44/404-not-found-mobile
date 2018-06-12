@@ -45,13 +45,10 @@ export class ExplorePage {
 
     this.charities.push(charity1);
     this.charities.push(charity2);
-    this.jwt = this.navParams.get('jwt');
-    console.log('Explore passed params',navParams.get('jwt'));
+    
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ExplorePage');
-    console.log('Passed params', this.navParams.data);
   }
 
   navigateToProfile(){
