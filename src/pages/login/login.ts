@@ -15,7 +15,8 @@ export class LoginPage {
 
   constructor( public navCtrl: NavController,
     public navParams: NavParams,
-    public http: Http
+    public http: Http,
+    private storage: Storage
 ) {
 }
   navigateToProfile(){
