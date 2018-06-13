@@ -4,6 +4,8 @@ import { ExplorePage } from '../explore/explore';
 import { HomePage } from '../home/home';
 import { App } from 'ionic-angular';
 import { Storage } from '@ionic/storage'
+import { User } from '../../models/user';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'page-home',
@@ -11,23 +13,43 @@ import { Storage } from '@ionic/storage'
 })
 export class ProfilePage {
   username: string;
-  jwt:string;
+  jwt: string;
+  user: User;
 
-  constructor(public navCtrl: NavController , public navParams: NavParams,private app:App, private storage: Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private app: App, public http: Http, private storage: Storage) {
     storage.get('jwt').then((val) => {
-      console.log('Your jwt is', val);
+      this.jwt = val;
+      console.log('final val', this.jwt);
+      this.http
+        .get("http://localhost:3000/users", {
+          params: {
+            jwt: this.jwt
+          }
+        })
+        .subscribe(
+          result => {
+            let tUser = result.json().user;
+            storage.set('user',tUser);
+          },
+          error => {
+            console.log(error);
+          }
+        );
     });
+
   }
 
-  navigateToHome(){
+  navigateToHome() {
+
+    
     this.app.getRootNav().setRoot(HomePage);
 
   }
-  navigateToExplore(){
+  navigateToExplore() {
     this.navCtrl.push(ExplorePage);
   }
 
-  showData(){
+  showData() {
     alert(this.username);
   }
 
