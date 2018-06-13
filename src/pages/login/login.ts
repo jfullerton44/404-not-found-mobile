@@ -32,6 +32,7 @@ export class LoginPage {
         result => {
           let token = result.json().token;
           storage.set('jwt', token);
+          storage.set('jwtFull', result);
           // Our username and password (on this) should have data from the user
           this.navCtrl.setRoot(TabsPage);
 

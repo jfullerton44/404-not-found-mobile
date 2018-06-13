@@ -28,6 +28,8 @@ export class ProfilePage {
         .subscribe(
           result => {
             let tUser = result.json().user;
+            this.user= tUser;
+            this.username= tUser.username
           },
           error => {
             console.log(error);
@@ -40,6 +42,7 @@ export class ProfilePage {
 
   navigateToHome(storage:Storage) {
     storage.remove('jwt');
+    storage.remove('jwtFull');
 
     this.app.getRootNav().setRoot(HomePage);
 
