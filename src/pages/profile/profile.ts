@@ -19,7 +19,6 @@ export class ProfilePage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private app: App, public http: Http, private storage: Storage) {
     storage.get('jwt').then((val) => {
       this.jwt = val;
-      console.log('final val', this.jwt);
       this.http
         .get("http://localhost:3000/users", {
           params: {
@@ -29,7 +28,6 @@ export class ProfilePage {
         .subscribe(
           result => {
             let tUser = result.json().user;
-            storage.set('user',tUser);
           },
           error => {
             console.log(error);
@@ -39,9 +37,10 @@ export class ProfilePage {
 
   }
 
-  navigateToHome() {
 
-    
+  navigateToHome(storage:Storage) {
+    storage.remove('jwt');
+
     this.app.getRootNav().setRoot(HomePage);
 
   }

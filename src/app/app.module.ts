@@ -57,4 +57,5 @@ import { PortfolioPage } from '../pages/portfolio/portfolio';
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
+
 export class AppModule {}
