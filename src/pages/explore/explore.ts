@@ -18,6 +18,7 @@ import { CharityPage } from '../charity/charity';
 })
 export class ExplorePage {
   username: string;
+  jwt: string;
 
   public charities: Array<Charity>=[];
 
@@ -44,10 +45,10 @@ export class ExplorePage {
 
     this.charities.push(charity1);
     this.charities.push(charity2);
+    
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad ExplorePage');
   }
 
   navigateToProfile(){
