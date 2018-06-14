@@ -12,8 +12,17 @@
   <p>
     {{charity.descriptionFull}}
   </p>
-
   <p>
     <a href={{charity.website}}> Website</a>
   </p>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Donation Amount</ion-label>
+      <ion-input type="number" [(ngModel)]="donationAmount"></ion-input>
+    </ion-item>
+  </ion-list>
+  <div padding>
+    <button ion-button block class="safari" (click)="addDonation(storage)"> Donate Now! </button>
+  </div>
+
 </ion-content>
