@@ -35,7 +35,7 @@ export class CharityPage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CharityPage');
+    //console.log('ionViewDidLoad CharityPage');
   }
 
   presentConfirm() {
@@ -53,7 +53,7 @@ export class CharityPage {
         {
           text: 'Donate',
           handler: () => {
-            console.log('Buy clicked');
+            //console.log('Buy clicked');
             this.addDonation(this.storage);
           }
         }
@@ -85,8 +85,11 @@ donationSuccessful() {
         })
         .subscribe(
           result => {
+            
             let tUser = result.json().user;
+            console.log(tUser);
             this.userId = tUser.id;
+            console.log(this.userId);
             this.username = tUser.username
 
             this.http

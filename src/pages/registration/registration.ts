@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-home',
@@ -21,7 +22,8 @@ export class RegistrationPage {
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public http: Http,
-    private storage: Storage
+    private storage: Storage,
+    private alertCtrl: AlertController
 
   ) {
   }
@@ -56,9 +58,8 @@ export class RegistrationPage {
           storage.set('jwt', token);
           storage.set('jwtFull', result);
           // Our username and password (on this) should have data from the user
-          this.navCtrl.setRoot(TabsPage, {
-            jwt: result
-          });
+          this.registrationSuccessful();
+          this.navCtrl.setRoot(LoginPage);
         },
 
         error => {
@@ -66,5 +67,13 @@ export class RegistrationPage {
         }
       );
 
+  }
+  registrationSuccessful() {
+    let alert = this.alertCtrl.create({
+      title: 'Registration Successful',
+      subTitle: 'Please Login',
+      buttons: ['Dismiss']
+    });
+    alert.present();
   }
 }
