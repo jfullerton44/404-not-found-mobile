@@ -117,8 +117,8 @@ export class PortfolioPage {
             }
             i++;
         }
-        console.log(this.donationAmount);
-        console.log(this.charities);
+        //console.log(this.donationAmount);
+       // console.log(this.charities);
         this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
             type: 'doughnut',
             data: {
