@@ -15,7 +15,7 @@ export class ProfilePage {
   username: string;
   jwt: string;
   user: User;
-
+ 
   constructor(public navCtrl: NavController, public navParams: NavParams, private app: App, public http: Http, private storage: Storage) {
     storage.get('jwt').then((val) => {
       this.jwt = val;

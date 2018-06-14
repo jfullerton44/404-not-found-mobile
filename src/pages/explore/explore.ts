@@ -52,9 +52,7 @@ export class ExplorePage {
     .get("http://localhost:3000/charities")
     .subscribe(
       result => {
-        console.log(result.json());
         let i=0;
-        console.log(result.json().length);
         while(i<result.json().length){
           this.charities.push(result.json()[i]);
           i++;
