@@ -66,7 +66,6 @@ export class CharityPage {
                 result => {
                   console.log(result);
                   // Our username and password (on this) should have data from the user
-
                 },
                 error => {
                   console.log(error);
