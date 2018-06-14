@@ -100,7 +100,6 @@ export class PortfolioPage {
     }
 
 
-    //ionViewDidLoad() {
     makeDonut() {
         let i=0;
         let len= this.charitiesFinal.length;
@@ -111,7 +110,6 @@ export class PortfolioPage {
         }
         while(i<this.charities.length){
             if(this.donationAmount[i]!=0){
-                console.log('nonzero');
                 this.donationAmountFinal.push(this.donationAmount[i]);
                 this.charitiesFinal.push(this.charities[i]);
             }

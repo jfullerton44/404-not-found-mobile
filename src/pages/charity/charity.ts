@@ -65,8 +65,7 @@ export class CharityPage {
               })
               .subscribe(
                 result => {
-                  // console.log(result);
-                  // Our username and password (on this) should have data from the user
+                  alert("Donation Successful")
                 },
                 error => {
                   console.log(error);
