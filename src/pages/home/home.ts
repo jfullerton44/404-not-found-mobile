@@ -14,7 +14,7 @@ import { TabsPage } from '../tabs/tabs';
 export class HomePage {
   constructor(public navCtrl: NavController, private storage: Storage) {
     storage.get('jwt').then((val) => {
-      console.log('Your jwt is ', val);
+      //console.log('Your jwt is ', val);
       if(val){
         this.navCtrl.push(TabsPage);
       }
