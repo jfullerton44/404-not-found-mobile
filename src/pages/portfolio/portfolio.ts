@@ -47,7 +47,6 @@ export class PortfolioPage {
                         let tUser = result.json().user;
                         this.user = tUser;
                         this.username = tUser.username
-                        //console.log("run");
                         this.http
                             .get("http://localhost:3000/donationsId", {
                                 params: {
@@ -57,7 +56,6 @@ export class PortfolioPage {
                             .subscribe(
                                 result => {
                                     var donations = result.json();
-                                    //console.log(donations);
                                     let i = 0;
                                     let len = donations.length;
                                     let tval = 0;
@@ -77,7 +75,6 @@ export class PortfolioPage {
                                                     i++;
                                                 }
                                                 this.makeDonut()
-                                                //console.log(this.charities);
                                             },
                                             error => {
                                                 console.log(error);
@@ -115,8 +112,6 @@ export class PortfolioPage {
             }
             i++;
         }
-        //console.log(this.donationAmount);
-       // console.log(this.charities);
         this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
             type: 'doughnut',
             data: {
