@@ -11,7 +11,7 @@ import { Storage } from '@ionic/storage';
 export class LoginPage {
   public username: string;
   public password: string;
-  public jwt: string
+  public jwt: string;
 
   constructor( public navCtrl: NavController,
     public navParams: NavParams,
