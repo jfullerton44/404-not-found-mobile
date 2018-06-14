@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Charity } from '../../models/charity';
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
+import { PortfolioPage } from '../portfolio/portfolio';
 
 /**
  * Generated class for the CharityPage page.
@@ -64,7 +65,7 @@ export class CharityPage {
               })
               .subscribe(
                 result => {
-                  console.log(result);
+                  // console.log(result);
                   // Our username and password (on this) should have data from the user
                 },
                 error => {

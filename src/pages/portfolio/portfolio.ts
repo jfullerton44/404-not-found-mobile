@@ -103,6 +103,12 @@ export class PortfolioPage {
     //ionViewDidLoad() {
     makeDonut() {
         let i=0;
+        let len= this.charitiesFinal.length;
+        while(i<len){
+            this.charitiesFinal.pop();
+            this.donationAmountFinal.pop();
+            i++;
+        }
         while(i<this.charities.length){
             if(this.donationAmount[i]!=0){
                 console.log('nonzero');
@@ -111,8 +117,8 @@ export class PortfolioPage {
             }
             i++;
         }
-        console.log(this.donationAmount);
-        console.log(this.charities);
+        //console.log(this.donationAmount);
+       // console.log(this.charities);
         this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
             type: 'doughnut',
             data: {
@@ -140,5 +146,9 @@ export class PortfolioPage {
             }
 
         });
+    }
+
+    reload(){
+        this.navCtrl.setRoot(this.navCtrl.getActive().component);
     }
 }
