@@ -87,9 +87,9 @@ donationSuccessful() {
           result => {
             
             let tUser = result.json().user;
-            console.log(tUser);
+            //console.log(tUser);
             this.userId = tUser.id;
-            console.log(this.userId);
+            //console.log(this.userId);
             this.username = tUser.username
 
             this.http
