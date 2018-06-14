@@ -3,7 +3,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Charity } from '../../models/charity';
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
-import { PortfolioPage } from '../portfolio/portfolio';
 import { AlertController } from 'ionic-angular';
 
 /**
@@ -73,7 +72,6 @@ donationSuccessful() {
   }
 
   addDonation(storage: Storage) {
-    let userId = 1;
     var amount: number;
     amount = +this.donationAmount;
 
