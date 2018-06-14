@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
@@ -16,7 +16,8 @@ export class LoginPage {
   constructor( public navCtrl: NavController,
     public navParams: NavParams,
     public http: Http,
-    private storage: Storage
+    private storage: Storage,
+    private alertCtrl : AlertController
 ) {
 }
   navigateToProfile(){
@@ -38,9 +39,18 @@ export class LoginPage {
 
         },
         error => {
+          this.LoginUnsuccessful();
           console.log(error);
         }
       );
+  }
+  LoginUnsuccessful() {
+    let alert = this.alertCtrl.create({
+      title: 'Login Failed',
+      subTitle: 'Username or Password incorrect',
+      buttons: ['Dismiss']
+    });
+    alert.present();
   }
 }
 
