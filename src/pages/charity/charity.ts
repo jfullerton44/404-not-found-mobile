@@ -4,6 +4,7 @@ import { Charity } from '../../models/charity';
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
 import { PortfolioPage } from '../portfolio/portfolio';
+import { AlertController } from 'ionic-angular';
 
 /**
  * Generated class for the CharityPage page.
@@ -28,13 +29,47 @@ export class CharityPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public http: Http,
-    private storage: Storage
+    private storage: Storage,
+    private alertCtrl : AlertController
   ) {
     this.charity = this.navParams.get('charity');
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CharityPage');
+  }
+
+  presentConfirm() {
+    let alert = this.alertCtrl.create({
+      title: 'Confirm donation',
+      message: 'Are you sure you want to donate $' + this.donationAmount + '?',
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Donate',
+          handler: () => {
+            console.log('Buy clicked');
+            this.addDonation(this.storage);
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+
+donationSuccessful() {
+    let alert = this.alertCtrl.create({
+      title: 'Donation Successful',
+      subTitle: 'Thank you for donating',
+      buttons: ['Dismiss']
+    });
+    alert.present();
   }
 
   addDonation(storage: Storage) {
@@ -65,7 +100,7 @@ export class CharityPage {
               })
               .subscribe(
                 result => {
-                  alert("Donation Successful")
+                  this.donationSuccessful();
                 },
                 error => {
                   console.log(error);
@@ -80,12 +115,6 @@ export class CharityPage {
     });
 
   }
-
-
-
-
-  //alert('donation successful');
-
 }
 
 
