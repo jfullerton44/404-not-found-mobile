@@ -1,0 +1,25 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>Charities</ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+      <h1>All Charities</h1>
+      <ion-searchbar style="padding:0"></ion-searchbar>
+      <hr>
+      <ion-list *ngFor="let c of sortedCharities" style="margin:0">
+          <div class="charity">
+          <ion-item no-lines (click) = "navigateToProjects(c)">
+                <img [src] = c.photoLink item-start>
+                <h2>{{c.name}}</h2>
+                <br>
+                <h3 text-wrap>{{c.description}}</h3>
+            </ion-item>
+            <ion-icon name="star" style="float:left; padding-left: 5%">2</ion-icon>
+            <ion-icon item-end name="heart" style="float:right; padding-right: 5%">2</ion-icon>
+            <hr style="clear: both">
+            </div>
+      </ion-list>
+  </ion-content>
+  

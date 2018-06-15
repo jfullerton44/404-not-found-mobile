@@ -16,6 +16,8 @@ import { CharityPage } from '../pages/charity/charity';
 import { TabsPage } from '../pages/tabs/tabs';
 import { PaymentPage } from '../pages/payment/payment';
 import { PortfolioPage } from '../pages/portfolio/portfolio';
+import { CharityListPage } from '../pages/charity-list/charity-list';
+import { ProjectPage } from '../pages/project/project';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { PortfolioPage } from '../pages/portfolio/portfolio';
     CharityPage,
     TabsPage,
     PaymentPage,
-    PortfolioPage
+    PortfolioPage,
+    CharityListPage,
+    ProjectPage
 
   ],
   imports: [
@@ -48,8 +52,9 @@ import { PortfolioPage } from '../pages/portfolio/portfolio';
     CharityPage,
     TabsPage,
     PaymentPage,
-    PortfolioPage
-
+    PortfolioPage,
+    CharityListPage,
+    ProjectPage
   ],
   providers: [
     StatusBar,

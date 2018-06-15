@@ -8,12 +8,17 @@
 
 
 <ion-content padding>
-  <ion-img width='350' height='200' src={{charity.photoLink2}}></ion-img>
+  <img src={{charity.photoLink2}}>
+  <h1>{{charity.name}}</h1>
+  <h2>
+    Contact us at:
+  </h2>
+  <h3>{{charity.phone}}</h3>
+  <h3>{{charity.email}}</h3>
+  <h4>Visit our website <a href={{charity.website}}>here</a>
+  </h4>
   <p>
     {{charity.descriptionFull}}
-  </p>
-  <p>
-    <a href={{charity.website}}> Website</a>
   </p>
   <ion-list>
     <ion-item>
@@ -24,5 +29,19 @@
   <div padding>
     <button ion-button block class="safari" (click)="presentConfirm()"> Donate Now! </button>
   </div>
-
+  <ion-grid>
+      <ion-row justify-content:start>
+      <ion-col col-6 *ngFor="let p of projects">
+        <ion-card class="card" (click) = "openProjectDetails(p)">
+          <img src={{p.photoLink}}>
+          <ion-icon end icon-only name="star-outline"></ion-icon>
+          <ion-card-content>
+            <ion-card-title>
+              {{p.name}}
+            </ion-card-title>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      </ion-row>
+    </ion-grid>
 </ion-content>
