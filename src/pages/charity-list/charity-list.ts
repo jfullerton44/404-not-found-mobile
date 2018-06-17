@@ -17,6 +17,9 @@ export class CharityListPage {
     public indexArr: any[];
 
     constructor(public navCtrl: NavController, public navParams: NavParams, public http: Http) {
+        this.numProjects = [];
+        this.numDonations = [];
+        this.indexArr = [];
         this.getCharities();
     }
 
@@ -26,25 +29,17 @@ export class CharityListPage {
                 this.sortedCharities = result.json().sort(this.compare);
                 let index = 0;
                 while(index < this.sortedCharities.length){
-                    this.http.get("http://localhost:3000/charities/" + this.sortedCharities[index].id + "/projects").subscribe(
+                    this.http.get(`http://localhost:3000/charities/${this.sortedCharities[index].id}/projects`).subscribe(
                         result => {
-                            console.log(result.json());
                             this.numProjects.push(result.json().length);
                         },
                         error => {
                             console.log(error);
                         }
                     );
-                    this.http.get("http://localhost:3000/donations",
-                {
-                    params: {
-                        charity_id: this.sortedCharities[index].id
-                    }
-                }).subscribe(
+                    this.http.get(`http://localhost:3000/charities/${this.sortedCharities[index].id}/donations`).subscribe(
                     result => {
-                        var len = result.json().length;
-                        console.log(len);
-                        console.log(this.numDonations);
+                        this.numDonations.push(result.json().length);
                     },
                     error => {
                         console.log(error);

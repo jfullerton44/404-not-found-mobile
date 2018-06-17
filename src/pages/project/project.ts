@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { Http } from '@angular/http';
 
 /**
  * Generated class for the ProjectPage page.
@@ -15,8 +16,12 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 })
 export class ProjectPage {
   public project;
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController) {
+  public charity;
+  public posts = [];
+  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, public http: Http) {
     this.project = this.navParams.get('project');
+    this.charity = this.navParams.get('charity');
+    this.getPosts();
   }
 
   ionViewDidLoad() {
@@ -25,5 +30,16 @@ export class ProjectPage {
 
   closeModal(){
     this.viewCtrl.dismiss();
+  }
+  
+  getPosts(){
+    this.http.get(`http://localhost:3000/charities/${this.charity.id}/projects/${this.project.id}/posts`).subscribe(
+      result => {
+        this.posts = result.json();
+      },
+      error => {
+        console.log(error);
+      }
+    )
   }
 }

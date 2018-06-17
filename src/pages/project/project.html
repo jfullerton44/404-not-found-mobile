@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{project.name}}</ion-title>
+    <ion-title></ion-title>
     <ion-buttons end>
       <button ion-button icon-only (click)="closeModal()">
         <ion-icon name="close"></ion-icon>
@@ -17,6 +17,22 @@
 </ion-header>
 
 <ion-content padding>
-  <img src={{project.photolink}}>
+  <h1>{{project.name}}</h1>
+  <img src={{project.photoLink}}>
   <p>{{project.description}}</p>
+  <ion-list *ngFor = "let post of posts">
+      <ion-card>
+          <ion-item>
+            <ion-avatar item-start>
+                <img src="{{charity.photoLink}}">
+            </ion-avatar>
+            <h2>{{post.name}}</h2>
+            <p>/<!--Post date--></p>
+          </ion-item>
+          <img src={{post.photoLink}}>
+          <ion-card-content>
+            <p>{{post.body}}</p>
+          </ion-card-content>
+        </ion-card>
+  </ion-list>
 </ion-content>

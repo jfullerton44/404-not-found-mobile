@@ -24,6 +24,7 @@ export class CharityPage {
   jwt: string;
   userId: number;
   username: string;
+  projects = [];
 
   constructor(
     public navCtrl: NavController,
@@ -34,6 +35,7 @@ export class CharityPage {
     public modalCtrl: ModalController
   ) {
     this.charity = this.navParams.get('charity');
+    this.getProjects();
   }
 
   ionViewDidLoad() {
@@ -119,10 +121,24 @@ donationSuccessful() {
 
   }
 
+  getProjects(){
+    this.http.get(`http://localhost:3000/charities/${this.charity.id}/projects`).subscribe(
+      result => {
+        result.json().forEach((project) => {
+          this.projects.push(project);
+        })
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
   openProjectDetails(project){
-    let modal = this.modalCtrl.create(ProjectPage, {project: project});
+    let modal = this.modalCtrl.create(ProjectPage, {charity: this.charity, project: project});
     modal.present();
   }
+
 }
 
 
