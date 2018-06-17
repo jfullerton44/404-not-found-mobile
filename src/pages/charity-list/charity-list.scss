@@ -1,0 +1,21 @@
+page-charity-list{
+    .item-md img{
+            float:right;
+    }
+    .item-md h2{
+        text-align: left;
+        font-weight: bold;
+        font-size: 2rem;
+        display: inline-block;
+    }
+    .item-md h3{
+        font-size: 1rem;
+    }
+    .item-md img{
+        width: 10rem;
+        height: 10rem;
+    }
+    ion-icon{
+        color: salmon;
+    }
+}

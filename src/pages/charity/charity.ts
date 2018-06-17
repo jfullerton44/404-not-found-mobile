@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { Charity } from '../../models/charity';
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
 import { AlertController } from 'ionic-angular';
+import { ProjectPage } from '../project/project';
 
 /**
  * Generated class for the CharityPage page.
@@ -23,15 +24,18 @@ export class CharityPage {
   jwt: string;
   userId: number;
   username: string;
+  projects = [];
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public http: Http,
     private storage: Storage,
-    private alertCtrl : AlertController
+    private alertCtrl : AlertController,
+    public modalCtrl: ModalController
   ) {
     this.charity = this.navParams.get('charity');
+    this.getProjects();
   }
 
   ionViewDidLoad() {
@@ -116,6 +120,25 @@ donationSuccessful() {
     });
 
   }
+
+  getProjects(){
+    this.http.get(`http://localhost:3000/charities/${this.charity.id}/projects`).subscribe(
+      result => {
+        result.json().forEach((project) => {
+          this.projects.push(project);
+        })
+      },
+      error => {
+        console.log(error);
+      }
+    )
+  }
+
+  openProjectDetails(project){
+    let modal = this.modalCtrl.create(ProjectPage, {charity: this.charity, project: project});
+    modal.present();
+  }
+
 }
 
 
