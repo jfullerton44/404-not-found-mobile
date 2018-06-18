@@ -1,6 +1,6 @@
 {
   "name": "CryptoSafari",
-  "app_id": "",
+  "app_id": "359910d4",
   "type": "ionic-angular",
   "integrations": {
     "cordova": {}
