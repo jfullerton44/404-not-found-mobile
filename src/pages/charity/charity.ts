@@ -85,7 +85,7 @@ donationSuccessful() {
       this.jwt = val;
       this.http
         .get(this.configService.getBaseUrl() + "/users", {
-          //.get("http://localhost:3000/users", {
+         
           params: {
             jwt: this.jwt
           }
@@ -94,9 +94,7 @@ donationSuccessful() {
           result => {
             
             let tUser = result.json().user;
-            //console.log(tUser);
             this.userId = tUser.id;
-            //console.log(this.userId);
             this.username = tUser.username
 
             this.http
