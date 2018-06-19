@@ -82,7 +82,8 @@ donationSuccessful() {
     storage.get('jwt').then((val) => {
       this.jwt = val;
       this.http
-        .get("http://localhost:3000/users", {
+        //.get(this.configService.getBaseUrl() + "/users", {
+          .get("http://localhost:3000/users", {
           params: {
             jwt: this.jwt
           }
