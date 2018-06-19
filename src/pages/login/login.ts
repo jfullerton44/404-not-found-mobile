@@ -3,6 +3,8 @@ import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
+import { ConfigService } from '../../config.service';
+
 
 @Component({
   selector: 'page-home',
@@ -17,7 +19,8 @@ export class LoginPage {
     public navParams: NavParams,
     public http: Http,
     private storage: Storage,
-    private alertCtrl : AlertController
+    private alertCtrl : AlertController,
+    public configService: ConfigService
 ) {
 }
   navigateToProfile(){
@@ -25,7 +28,7 @@ export class LoginPage {
   }
   login(storage: Storage) {
     this.http
-      .post("http://localhost:3000/login", {
+      .post(this.configService.getBaseUrl() + "/login", {
         username: this.username,
         password: this.password
       })

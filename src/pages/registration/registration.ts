@@ -4,6 +4,8 @@ import { TabsPage } from '../tabs/tabs';
 import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
 import { LoginPage } from '../login/login';
+import { ConfigService } from '../../config.service';
+
 
 @Component({
   selector: 'page-home',
@@ -18,32 +20,32 @@ export class RegistrationPage {
   email: string;
   dob: string;
   jwt: string;
-  
+
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public http: Http,
     private storage: Storage,
-    private alertCtrl: AlertController
-
+    private alertCtrl: AlertController,
+    public configService: ConfigService
   ) {
   }
 
-  navigateToTabs(){
-    this.navCtrl.setRoot(TabsPage,{username:this.username} )
+  navigateToTabs() {
+    this.navCtrl.setRoot(TabsPage, { username: this.username })
   }
 
-  checkPassword(){
-    if(this.password!=this.password2){
+  checkPassword() {
+    if (this.password != this.password2) {
       alert('Passwords do not match');
     }
-    else{
+    else {
       this.register(this.storage);
     }
   }
 
-  register(storage: Storage){
+  register(storage: Storage) {
     this.http
-      .post("http://localhost:3000/reg/users", {
+      .post(this.configService.getBaseUrl() + "/reg/users", {
         username: this.username,
         password: this.password,
         email: this.email,
