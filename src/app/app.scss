@@ -17,11 +17,11 @@
 
 
 .safari{
-    background-color: rgb(249,	65,	42);
+    background-color: color($colors, neworange);
 }
 
 h2{
-    text-align: center;
+    text-align: center; 
 }
 
 h1{
@@ -29,6 +29,5 @@ h1{
 }
 
 .toolbar-background {
-    background-color: rgb(252,84,31);
+    background-color: color($colors, newpink);
 }
-

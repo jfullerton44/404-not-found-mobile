@@ -1,15 +1,22 @@
-<ion-header >
+<!-- <ion-header>
   <ion-navbar>
-    <ion-title color="white" class="Head"> 
+    <ion-title class="Head"> 
       Crypto Safari
     </ion-title>
   </ion-navbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content text-center padding class= "class">
+<ion-content text-center padding id="homepage">
 
-  <img src="https://s33.postimg.cc/gay5nlm8v/Screen_Shot_2018-06-01_at_11.08.49_AM.png">
-  <button ion-button block id="topHome" class ="safari homepage-button" (click)="navigateToLogin()"> Login </button>
-  <button ion-button block id="bottomHome" class="safari homepage-button" (click)="navigateToRegistration()"> Register</button>
+  <p id="appname">Crypto Safari</p>
+
+  <!-- <p id="subheader">
+  cuteness!<br>
+  cryptocurrency!<br>
+  charity!
+  </p> -->
+  
+  <button ion-button block class="button" (click)="navigateToLogin()"> Login </button>
+  <button ion-button block class="button" (click)="navigateToRegistration()"> Register</button>
 
 </ion-content>

@@ -1,35 +1,50 @@
 page-home {
-    // .class{
-    //     background-color: orange;
+    
+    #homepage {
+        background-image: url("https://i.imgur.com/FyeH8xL.png");
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-size:cover;
+
+    }
+
+    .button {
+        margin-top: 10%;
+        background-color: color($colors, newpink);
+        font-size: 2.5rem;
+    }
+
+    #appname {
+        margin-top: 40%;
+        margin-bottom: 20%;
+        font-family: BebasBold;
+        font-size: 8.5rem;
+        text-shadow: 2px 2px color($colors, newpink);
+        color: black;
+    }
+
+     #subheader {
+        margin-bottom: 20%;
+        margin-top: 20%;
+        font-size: 2.7rem;
+        text-shadow: 2px 2px 3px color($colors, newpink);
+        color: black;
+     }
+    
+
+    // $page-background: linear-gradient(to bottom, color($colors, neworange) 0%, color($colors, newpink) 50%, color($colors, newblue) 100%);
+    // $background-color: transparent;
+    // $toolbar-border: none;
+    
+
+    // @-webkit-keyframes fadeIn {
+    //     0% {background-color: white}
+    //     100% {$background-color: transparent;}
     // }
 
-    $background-color: blue;
-
-    ion-menu ion-content {
-        background-color: yellow !important;
-    }
-
-    h2{
-        text-align: center;
-    }
-
-    .Head{
-        background-color:rgb(252,84,31) ;
-        position: absolute;
-        top:0;
-        left:0;
-        bottom:0;
-        right:0;
-        width:100%;
-        height:100%; 
-        text-align: center; 
-    }
-  
-    #topHome{
-        margin-top:10%
-    }
-    #bottomHome{
-        margin-top:10%;
-    }
+    // .backgroundFade {
+    //     -webkit-animation: fadeIn 2s ease;
+    //     animation: fadeIn 2s ease;
+    // }
     
 }
