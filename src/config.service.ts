@@ -1,14 +1,14 @@
-// import { Injectable } from "@angular/core";
-// import { Http } from "@angular/http";
+import { Injectable } from "@angular/core";
+import { Http } from "@angular/http";
 
 
-// @Injectable
-// export class ConfigService{
-//      constructor(
-//          public http:Http
-//      ){}
+@Injectable()
+export class ConfigService{
+     constructor(
+         public http:Http
+     ){}
 
-//      getBaseUrl(){
-
-//      }
-// }
+     getBaseUrl(){
+        return "https://golden-thread-404.herokuapp.com"
+     }
+}

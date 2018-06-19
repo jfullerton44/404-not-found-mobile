@@ -5,6 +5,7 @@ import { Http } from '@angular/http';
 import { Storage } from '@ionic/storage';
 import { AlertController } from 'ionic-angular';
 import { ProjectPage } from '../project/project';
+import { ConfigService } from '../../config.service';
 
 /**
  * Generated class for the CharityPage page.
@@ -32,7 +33,8 @@ export class CharityPage {
     public http: Http,
     private storage: Storage,
     private alertCtrl : AlertController,
-    public modalCtrl: ModalController
+    public modalCtrl: ModalController,
+    public configService: ConfigService
   ) {
     this.charity = this.navParams.get('charity');
     this.getProjects();
@@ -82,8 +84,8 @@ donationSuccessful() {
     storage.get('jwt').then((val) => {
       this.jwt = val;
       this.http
-        //.get(this.configService.getBaseUrl() + "/users", {
-          .get("http://localhost:3000/users", {
+        .get(this.configService.getBaseUrl() + "/users", {
+          //.get("http://localhost:3000/users", {
           params: {
             jwt: this.jwt
           }
@@ -98,7 +100,7 @@ donationSuccessful() {
             this.username = tUser.username
 
             this.http
-              .post("http://localhost:3000/donations", {
+              .post(this.configService.getBaseUrl() + "/donations", {
                 charity_id: this.charity.id,
                 amount_donated: amount,
                 date: new Date().toISOString(),
@@ -123,7 +125,8 @@ donationSuccessful() {
   }
 
   getProjects(){
-    this.http.get(`http://localhost:3000/charities/${this.charity.id}/projects`).subscribe(
+    this.http.get(this.configService.getBaseUrl() + `/charities/${this.charity.id}/projects`)
+    .subscribe(
       result => {
         result.json().forEach((project) => {
           this.projects.push(project);

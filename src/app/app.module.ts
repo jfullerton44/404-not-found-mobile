@@ -18,6 +18,7 @@ import { PaymentPage } from '../pages/payment/payment';
 import { PortfolioPage } from '../pages/portfolio/portfolio';
 import { CharityListPage } from '../pages/charity-list/charity-list';
 import { ProjectPage } from '../pages/project/project';
+import { ConfigService } from '../config.service';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { ProjectPage } from '../pages/project/project';
   providers: [
     StatusBar,
     SplashScreen,
+    ConfigService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

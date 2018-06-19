@@ -6,6 +6,8 @@ import { App } from 'ionic-angular';
 import { Storage } from '@ionic/storage'
 import { User } from '../../models/user';
 import { Http } from '@angular/http';
+import { ConfigService } from '../../config.service';
+
 
 @Component({
   selector: 'page-home',
@@ -16,11 +18,11 @@ export class ProfilePage {
   jwt: string;
   user: User;
  
-  constructor(public navCtrl: NavController, public navParams: NavParams, private app: App, public http: Http, private storage: Storage) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private app: App, public http: Http, private storage: Storage, public configService: ConfigService) {
     storage.get('jwt').then((val) => {
       this.jwt = val;
       this.http
-        .get("http://localhost:3000/users", {
+        .get(this.configService.getBaseUrl() + "/users", {
           params: {
             jwt: this.jwt
           }

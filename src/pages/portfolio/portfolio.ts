@@ -4,6 +4,8 @@ import { Chart } from 'chart.js';
 import { Storage } from '@ionic/storage';
 import { User } from '../../models/user';
 import { Http } from '@angular/http';
+import { ConfigService } from '../../config.service';
+
 
 /**
  * Generated class for the PortfolioPage page.
@@ -31,13 +33,14 @@ export class PortfolioPage {
         public navCtrl: NavController,
         public navParams: NavParams,
         private storage: Storage,
-        public http: Http
+        public http: Http,
+        public configService: ConfigService
     ) {
 
         storage.get('jwt').then((val) => {
             this.jwt = val;
             this.http
-                .get("http://localhost:3000/users", {
+                .get(this.configService.getBaseUrl() + "/users", {
                     params: {
                         jwt: this.jwt
                     }
@@ -48,7 +51,7 @@ export class PortfolioPage {
                         this.user = tUser;
                         this.username = tUser.username
                         this.http
-                            .get("http://localhost:3000/donationsId", {
+                            .get(this.configService.getBaseUrl() + "/donationsId", {
                                 params: {
                                     user_id: tUser.id
                                 }
@@ -65,7 +68,7 @@ export class PortfolioPage {
                                         i++
                                     }
                                     this.http
-                                        .get("http://localhost:3000/charities")
+                                        .get(this.configService.getBaseUrl() + "/charities")
                                         .subscribe(
                                             result => {
                                                 let i = 0;
