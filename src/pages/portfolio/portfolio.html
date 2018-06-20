@@ -22,6 +22,11 @@
       <canvas #doughnutCanvas></canvas>
     </ion-card-content>
   </ion-card>
+  <ion-card>
+    You have donated {{numberOfDonations}} times!
+    <br>
+    Your total donations: {{totalDonations}}
+  </ion-card>
 
   <button ion-button class="safari" block (click)="reload()"> Reload </button>
   
