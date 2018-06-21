@@ -10,7 +10,7 @@ import { ConfigService } from '../../config.service';
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-
+declare var Stripe;
 @IonicPage()
 @Component({
   selector: 'page-card',
@@ -19,7 +19,8 @@ import { ConfigService } from '../../config.service';
 export class CardPage {
   jwt: string;
   user;
-  cardArr = [];
+  sources = [];
+  stripe = Stripe('pk_test_XoMg67WscqYcJqIw6Ihla35M');
 
   constructor(public storage: Storage, public http: Http, public configService: ConfigService) {
     storage.get('jwt').then((val) => {
@@ -48,7 +49,22 @@ export class CardPage {
   getCards(){
     this.http.get(this.configService.getBaseUrl() + `/users/${this.user.id}/payment_methods`).subscribe(
       result => {
-        this.cardArr = result.json();
+        let cards = result.json();
+        console.log(cards);
+        cards.forEach((card) => {
+          this.stripe.retrieveSource({
+            id: card.cardSource,
+            client_secret: card.clientID
+          }).then(result => {
+            if (result.error) {
+              var errorElement = document.getElementById('card-errors');
+              errorElement.textContent = result.error.message;
+            }
+            else{
+              this.sources.push(result.source);
+            }
+          });
+        })
       },
       error => {
         console.log(error);

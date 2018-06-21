@@ -24,6 +24,7 @@ export class PaymentPage {
   card: any;
   jwt: string;
   user;
+  fullName;
 
   constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams, public http: Http, public configService: ConfigService, public storage: Storage) {
     storage.get('jwt').then((val) => {
@@ -93,10 +94,13 @@ export class PaymentPage {
         } else {
           console.log(result);
           let s = result.source;
+          console.log(this.user.id);
           this.http.post(this.configService.getBaseUrl() + "/payment_method", {
             user_id: Number(this.user.id),
+            name: this.fullName, 
             lastFourCardNum: s.card.last4,
-            cardToken: s.id
+            cardSource: s.id,
+            clientID: s.client_secret
           }).subscribe(
             result => {
               console.log("Payment method posted: ", result);

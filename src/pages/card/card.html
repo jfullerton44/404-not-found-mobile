@@ -14,9 +14,10 @@
 
 
 <ion-content padding>
-  <ion-list *ngFor = "let card of cardArr">
+  <ion-list *ngFor = "let source of sources">
     <ion-item>
-      {{card.name}}, {{card.lastFourCardNum}}
+      <b>Card Type: </b>{{source.type}}<br>
+      Ends with {{source.card.last4}}
     </ion-item>
   </ion-list>
 </ion-content>
