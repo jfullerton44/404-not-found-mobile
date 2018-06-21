@@ -1,13 +1,12 @@
-<ion-header>
+<ion-header no-border>
     <ion-navbar>
         <ion-title>
-            Login Page
+            Login
         </ion-title>
     </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-    <h1>Login</h1>
+<ion-content padding class="page">
         <ion-list>
                 <ion-item>
                   <ion-label floating >Username</ion-label>
@@ -22,6 +21,6 @@
               </ion-list>
 
               <div padding>
-                    <button ion-button block class="safari" (click)="login(storage)"> Login </button>
+                    <button ion-button block (click)="login(storage)">Start Exploring</button>
               </div>
 </ion-content>

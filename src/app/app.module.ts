@@ -34,15 +34,27 @@ import { CharityCreationPage } from '../pages/charity-creation/charity-creation'
     PaymentPage,
     PortfolioPage,
     CharityListPage,
+<<<<<<< HEAD
     ProjectPage,
     CharityCreationPage
+=======
+    ProjectPage
+>>>>>>> julia-ui-branch
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
     HttpModule,
-    IonicStorageModule.forRoot()
-  ],
+    IonicStorageModule.forRoot(),
+    IonicModule.forRoot(MyApp, {
+      backButtonText: '  ',
+      iconMode: 'ios',
+      modalEnter: 'modal-slide-in',
+      modalLeave: 'modal-slide-out',
+      tabsPlacement: 'bottom',
+      pageTransition: 'ios-transition',
+      activator: 'ripple',
+    },
+    )],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,

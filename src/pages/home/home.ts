@@ -12,6 +12,9 @@ import { TabsPage } from '../tabs/tabs';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  clicked = true;
+  buttonColor: string;
+
   constructor(public navCtrl: NavController, private storage: Storage) {
     storage.get('jwt').then((val) => {
       //console.log('Your jwt is ', val);
@@ -28,10 +31,36 @@ export class HomePage {
   navigateToRegistration(){
     this.navCtrl.push(RegistrationPage);
   }
-  navigateToProfile(){
-    this.navCtrl.push(ProfilePage);
-  }
-  navigateToExplore(){
-    this.navCtrl.push(ExplorePage);
-  }
+  
+  // addEvent(){
+  //   this.buttonColor = '#345465';
+  // }
+
+//   colortoggle() {
+//     if(this.clicked){
+//       this.buttonColor = 'color($colors, orange)';
+//       this.clicked = false;
+//  }
+//  else{
+//       this.buttonColor = 'color($colors, pink)'; //hex code for previous color
+//       this.clicked = true;
+//  }
+//   }
+
+  // login()
+  // {
+  //   // this.colortoggle();
+  //   this.navigateToLogin();
+  // }
+
+  // buttonChange()
+  // {
+  //   $
+  // }
+  // navigateToProfile(){
+  //   this.navCtrl.push(ProfilePage);
+  // }
+  // navigateToExplore(){
+  //   this.navCtrl.push(ExplorePage);
+  // }
 }

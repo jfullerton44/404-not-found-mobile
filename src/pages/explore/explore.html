@@ -1,14 +1,13 @@
-<ion-header class="safari">
+<ion-header no-border class="page-headers">
   <ion-navbar>
     <ion-title>Explore</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
   <h1>
-    Explore all of our charities to decide what cause is the most important to you.
+    Browse through the organizations that need your help.
   </h1>
   <ion-card ion-item *ngFor="let charity of charities">
     <ion-card-header>
@@ -20,6 +19,5 @@
       <button ion-button class="safari" block (click)="navigateToPage(charity)"> More Info </button>
     </ion-card-content>
   </ion-card>
-
 
 </ion-content>
