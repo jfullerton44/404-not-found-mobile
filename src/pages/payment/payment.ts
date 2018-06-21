@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, AlertController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { ConfigService } from '../../config.service';
 import { Storage } from '@ionic/storage';
@@ -26,7 +26,7 @@ export class PaymentPage {
   user;
   fullName;
 
-  constructor(public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams, public http: Http, public configService: ConfigService, public storage: Storage) {
+  constructor(public alertCtrl: AlertController, public viewCtrl: ViewController, public navCtrl: NavController, public navParams: NavParams, public http: Http, public configService: ConfigService, public storage: Storage) {
     storage.get('jwt').then((val) => {
       this.jwt = val;
       this.http
@@ -104,6 +104,13 @@ export class PaymentPage {
           }).subscribe(
             result => {
               console.log("Payment method posted: ", result);
+              let alert = this.alertCtrl.create({
+                title: 'Card saved!',
+                subTitle: 'Your card information has been securely saved',
+                buttons: ['Dismiss']
+              });
+              alert.present();
+              this.navCtrl.pop();
             },
             error => {
               console.log(error);

@@ -105,11 +105,11 @@ donationSuccessful() {
 
             this.http
               .post(this.configService.getBaseUrl() + "/donations", {
-                charity_id: this.charity.id,
-                amount_donated: amount,
+                charity_id: this.charity.id as number,
+                amount_donated: amount as number,
                 date: new Date().toISOString(),
-                user_id: this.userId,
-                pm_id: this.paymentID
+                user_id: this.userId as number,
+                pm_id: this.paymentID as number
               })
               .subscribe(
                 result => {

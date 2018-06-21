@@ -6,4 +6,6 @@ export class Charity {
     photoLink: string;
     photoLink2: string;
     website: string;
+    numberOfDonations: number;
+    numberOfProjects: number;
 }
