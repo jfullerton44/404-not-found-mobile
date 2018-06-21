@@ -22,6 +22,7 @@ import { SettingsPage } from '../pages/settings/settings';
 import { CardPage } from '../pages/card/card';
 import { PaymentOptionsPage } from '../pages/payment-options/payment-options';
 import { CharityCreationPage } from '../pages/charity-creation/charity-creation';
+import { CharityServiceProvider } from '../charity.service';
 
 @NgModule({
   declarations: [
@@ -71,6 +72,7 @@ import { CharityCreationPage } from '../pages/charity-creation/charity-creation'
     StatusBar,
     SplashScreen,
     ConfigService,
+    CharityServiceProvider,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

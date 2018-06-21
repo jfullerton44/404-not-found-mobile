@@ -14,6 +14,7 @@
 
 
 <ion-content padding>
+    <button ion-button class="safari" block (click)="reload()"> Refresh</button>
   <ion-card>
     <ion-card-header>
       Current Donation Distribution
@@ -27,7 +28,14 @@
     <br>
     Your total donations: ${{totalDonations}}
   </ion-card>
+  <ion-card ion-item *ngFor ="let donation of donations">
+    <ion-card-content>
+      Charity: {{charities[donation.charity_id]}}
+      <br>
+      Donation amount: {{donation.amount_donated}}
+      <br>
+      Date: {{donation.date}}
 
-  <button ion-button class="safari" block (click)="reload()"> Reload </button>
-  
+    </ion-card-content>
+  </ion-card>  
 </ion-content>
