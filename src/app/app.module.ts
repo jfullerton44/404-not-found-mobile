@@ -19,6 +19,7 @@ import { PortfolioPage } from '../pages/portfolio/portfolio';
 import { CharityListPage } from '../pages/charity-list/charity-list';
 import { ProjectPage } from '../pages/project/project';
 import { ConfigService } from '../config.service';
+import { CharityCreationPage } from '../pages/charity-creation/charity-creation';
 
 @NgModule({
   declarations: [
@@ -33,8 +34,8 @@ import { ConfigService } from '../config.service';
     PaymentPage,
     PortfolioPage,
     CharityListPage,
-    ProjectPage
-
+    ProjectPage,
+    CharityCreationPage
   ],
   imports: [
     BrowserModule,
@@ -55,7 +56,8 @@ import { ConfigService } from '../config.service';
     PaymentPage,
     PortfolioPage,
     CharityListPage,
-    ProjectPage
+    ProjectPage,
+    CharityCreationPage
   ],
   providers: [
     StatusBar,
