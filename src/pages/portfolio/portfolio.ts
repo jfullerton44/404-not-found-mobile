@@ -31,6 +31,7 @@ export class PortfolioPage {
     donationAmountFinal:Array<number>=[];
     totalDonations: number;
     numberOfDonations: number;
+    public donations: any =[];
     constructor(
         public navCtrl: NavController,
         public navParams: NavParams,
@@ -60,13 +61,14 @@ export class PortfolioPage {
                             })
                             .subscribe(
                                 result => {
-                                    var donations = result.json();
+                                    this.donations = result.json();
+                                    console.log(this.donations)
                                     let i = 0;
-                                    let len = donations.length;
+                                    let len = this.donations.length;
                                     let tval = 0;
                                     while (i < len) {
-                                        tval = donations[i].amount_donated;
-                                        this.donationAmount[donations[i].charity_id] += tval;
+                                        tval = this.donations[i].amount_donated;
+                                        this.donationAmount[this.donations[i].charity_id] += tval;
                                         i++
                                     }
                                     this.http
@@ -103,6 +105,7 @@ export class PortfolioPage {
 
 
     makeDonut() {
+
         let i=0;
         let len= this.charitiesFinal.length;
         this.totalDonations=0;
@@ -120,7 +123,7 @@ export class PortfolioPage {
             }
             i++;
         }
-        this.numberOfDonations= this.charitiesFinal.length;
+        this.numberOfDonations= this.donations.length;
         this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
             type: 'doughnut',
             data: {

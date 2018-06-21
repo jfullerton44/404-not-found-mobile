@@ -8,69 +8,30 @@
 
   <ion-navbar>
     <ion-title>Payment</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="closeModal()">
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 
 </ion-header>
 
 
 <ion-content padding>
-  <ion-item>
-    <ion-label floating>Full Name</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
+  <ion-input type = "text" placeholder = "Name on Card" [(ngModel)] = "fullName"></ion-input>
+  <form action="/" method="post" id="payment-form">
+    <div class="form-row">
+      <div id="card-element">
+        <!-- a Stripe Element will be inserted here. -->
+      </div>
 
-  <ion-item>
-    <ion-label floating>Credit Card Number</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
+      <!-- Used to display Element errors -->
+      <div id="card-errors" role="alert"></div>
+    </div>
 
-  <ion-item>
-    <ion-label floating>Expiration Date</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label floating>Security Code</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label floating>Address Line 1</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label floating>Address Line 2</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label floating>City</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label floating>Zip Code</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label floating>Country</ion-label>
-    <ion-input type="text"></ion-input>
-  </ion-item>
-
-  <ion-item>
-    <ion-label>Payment Frequency</ion-label>
-    <ion-select [(ngModel)]="paymentFreq">
-      <ion-option value="once">Once</ion-option>
-      <ion-option value="weekly">Weekly</ion-option>
-      <ion-option value="biweekly">Biweekly </ion-option>
-      <ion-option value="monthly">Monthly</ion-option>
-    </ion-select>
-  </ion-item>
-
-  <div padding>
-    <button ion-button class="safari" block > Save </button>
-  </div>
+  <button ion-button block large>Add Card</button>
+    
+  </form>
 
 </ion-content>
