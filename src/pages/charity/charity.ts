@@ -6,6 +6,7 @@ import { Storage } from '@ionic/storage';
 import { AlertController } from 'ionic-angular';
 import { ProjectPage } from '../project/project';
 import { ConfigService } from '../../config.service';
+import { PaymentOptionsPage } from '../payment-options/payment-options';
 
 /**
  * Generated class for the CharityPage page.
@@ -26,6 +27,7 @@ export class CharityPage {
   userId: number;
   username: string;
   projects = [];
+  paymentID;
 
   constructor(
     public navCtrl: NavController,
@@ -59,8 +61,12 @@ export class CharityPage {
         {
           text: 'Donate',
           handler: () => {
-            //console.log('Buy clicked');
-            this.addDonation(this.storage);
+            let modal = this.modalCtrl.create(PaymentOptionsPage);
+            modal.onDidDismiss(pm_id => {
+              this.paymentID = pm_id;
+              this.addDonation(this.storage);
+            })
+            modal.present();
           }
         }
       ]
@@ -102,7 +108,8 @@ donationSuccessful() {
                 charity_id: this.charity.id,
                 amount_donated: amount,
                 date: new Date().toISOString(),
-                user_id: this.userId
+                user_id: this.userId,
+                pm_id: this.paymentID
               })
               .subscribe(
                 result => {
