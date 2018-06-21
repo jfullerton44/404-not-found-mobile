@@ -1,11 +1,32 @@
 page-explore {
-
-    h1{
+    p {
         text-align: center;
-        font-size: 70%;
+        font-size: 49%;
+        background-color: color($colors,pink);
+        margin: 0;
+        padding: 10px;
     }
-
-    // $ion-header ion-toolbar-button-color: color($colors, orange);
-    // $toolbar-background: color($colors, orange);
-    
+    .card-image
+    {
+        height: 120px;
+        width: 120px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .card-style {
+        text-align: center;
+        background-color: transparent; 
+        box-shadow: none !important;
+        padding: 0;
+    }
+    .card-style button {
+        background-color: color($colors, orange);
+        font-size: 1.5rem;
+        margin: 0;
+    }
+    .card-header
+    {
+        margin: 0;
+    }
 }
+ 

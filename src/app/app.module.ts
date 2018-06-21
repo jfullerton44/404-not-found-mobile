@@ -34,12 +34,8 @@ import { CharityCreationPage } from '../pages/charity-creation/charity-creation'
     PaymentPage,
     PortfolioPage,
     CharityListPage,
-<<<<<<< HEAD
     ProjectPage,
     CharityCreationPage
-=======
-    ProjectPage
->>>>>>> julia-ui-branch
   ],
   imports: [
     BrowserModule,
