@@ -22,12 +22,14 @@ export class ExplorePage {
   jwt: string;
 
   public charities: Array<Charity>=[];
+  private currentColor: string;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public http: Http
     ){
+    this.currentColor = 'orange'
     // var charity1 = new Charity();
     // charity1.id = 1;
     // charity1.name = "Tennis for Fun";

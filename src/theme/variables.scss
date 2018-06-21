@@ -108,7 +108,7 @@ $colors: (
 
 $font-family-base: 'CrusoeText-Regular';
 $font-size-base: 2rem;
-// $toolbar-ios-title-font-size: 2.3rem;
+$toolbar-ios-title-font-size: 2.5rem;
 
 // $buttoncolors: (
 //   afterclick: color($colors, pink)
@@ -118,12 +118,16 @@ ion-header ion-icon.back-button-icon.icon {
   color: map-get($colors, light);
 }
 
-$toolbar-background: color($colors, orange);
-//$toolbar-color: color($colors, orange);
+$toolbar-background: transparent;
 
 ion-content {
   background-image: url("https://i.imgur.com/d3BwGiO.png");
   background-color: transparent;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.page-headers
+{
+  background-color: orange;
 }

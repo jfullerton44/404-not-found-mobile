@@ -20,6 +20,14 @@
 //   //background-color: color($colors, orange);
 // }
 
+.scroll-content {
+    overflow: hidden;
+  }
+
+.button {
+    font-size: 2.5rem;
+}
+
 // Then you can A. Make classes for your colors and do <button ion-button
 //  [ngClass]="buttonClass" (click)="someAction()"></button> B. Set the styling
 //   directly <button ion-button [style.backgroundColor]="buttonColor" 
