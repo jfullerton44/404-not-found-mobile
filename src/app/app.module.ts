@@ -5,7 +5,6 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { IonicStorageModule } from '@ionic/storage';
-
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { ExplorePage } from '../pages/explore/explore';
@@ -22,6 +21,7 @@ import { ConfigService } from '../config.service';
 import { SettingsPage } from '../pages/settings/settings';
 import { CardPage } from '../pages/card/card';
 import { PaymentOptionsPage } from '../pages/payment-options/payment-options';
+import { CharityCreationPage } from '../pages/charity-creation/charity-creation';
 
 @NgModule({
   declarations: [
@@ -39,7 +39,8 @@ import { PaymentOptionsPage } from '../pages/payment-options/payment-options';
     ProjectPage,
     SettingsPage,
     CardPage,
-    PaymentOptionsPage
+    PaymentOptionsPage,
+    CharityCreationPage
   ],
   imports: [
     BrowserModule,
@@ -63,7 +64,8 @@ import { PaymentOptionsPage } from '../pages/payment-options/payment-options';
     ProjectPage,
     SettingsPage,
     CardPage,
-    PaymentOptionsPage
+    PaymentOptionsPage,
+    CharityCreationPage
   ],
   providers: [
     StatusBar,

@@ -8,6 +8,7 @@ import { User } from '../../models/user';
 import { Http } from '@angular/http';
 import { ConfigService } from '../../config.service';
 import { SettingsPage } from '../settings/settings';
+import { CharityCreationPage } from '../charity-creation/charity-creation';
 
 
 @Component({
@@ -50,8 +51,8 @@ export class ProfilePage {
     this.app.getRootNav().setRoot(HomePage);
 
   }
-  navigateToExplore() {
-    this.navCtrl.push(ExplorePage);
+  navigateToCharityRegistration(){
+    this.navCtrl.push(CharityCreationPage);
   }
 
   showData() {
