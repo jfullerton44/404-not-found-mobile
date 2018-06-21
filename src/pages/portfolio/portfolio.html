@@ -27,6 +27,16 @@
     <br>
     Your total donations: {{totalDonations}}
   </ion-card>
+  <ion-card ion-item *ngFor ="let donation of donations">
+    <ion-card-content>
+      Charity: {{charities[donation.charity_id]}}
+      <br>
+      Donation amount: {{donation.amount_donated}}
+      <br>
+      Date: {{donation.date}}
+
+    </ion-card-content>
+  </ion-card>
 
   <button ion-button class="safari" block (click)="reload()"> Reload </button>
   
