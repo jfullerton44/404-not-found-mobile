@@ -63,6 +63,7 @@ export class PortfolioPage {
                                     var donations = result.json();
                                     let i = 0;
                                     let len = donations.length;
+                                    this.numberOfDonations = len;
                                     let tval = 0;
                                     while (i < len) {
                                         tval = donations[i].amount_donated;
@@ -111,7 +112,6 @@ export class PortfolioPage {
             this.donationAmountFinal.pop();
             i++;
         }
-        this.numberOfDonations= this.charities.length;
         while(i<this.charities.length){
             if(this.donationAmount[i]!=0){
                 this.totalDonations= this.donationAmount[i]+ this.totalDonations;
@@ -120,7 +120,7 @@ export class PortfolioPage {
             }
             i++;
         }
-        this.numberOfDonations= this.charitiesFinal.length;
+        //this.numberOfDonations= this.charitiesFinal.length;
         this.doughnutChart = new Chart(this.doughnutCanvas.nativeElement, {
             type: 'doughnut',
             data: {
