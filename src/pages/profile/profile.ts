@@ -7,6 +7,7 @@ import { Storage } from '@ionic/storage'
 import { User } from '../../models/user';
 import { Http } from '@angular/http';
 import { ConfigService } from '../../config.service';
+import { SettingsPage } from '../settings/settings';
 
 
 @Component({
@@ -55,6 +56,10 @@ export class ProfilePage {
 
   showData() {
     alert(this.username);
+  }
+
+  navigateToSettings(){
+    this.navCtrl.push(SettingsPage);
   }
 
 }
