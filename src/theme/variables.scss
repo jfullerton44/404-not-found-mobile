@@ -23,8 +23,6 @@ $app-direction: ltr;
 // http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
 
-$header-color : #4bc0c8;
-
 // Named Color Variables
 // --------------------------------------------------
 // Named colors makes it easy to reuse colors on various components.
@@ -34,18 +32,14 @@ $header-color : #4bc0c8;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff, 
+  primary:    #feac5e, 
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,
-  // orange:     #FD7C00,
-  // safari:   rgb(249,65,42),
-  // headerColor: rgb(252,84,31)
-  neworange: #feac5e,
-  newpink: #f9b2dd,
-  newblue: #4bc0c8
-
+  orange:     #feac5e,
+  pink:       #f9b2dd,
+  blue:       #4bc0c8
 );
 
 
@@ -114,6 +108,22 @@ $colors: (
 
 $font-family-base: 'CrusoeText-Regular';
 $font-size-base: 2rem;
-$toolbar-ios-title-font-size: 2.3rem;
+// $toolbar-ios-title-font-size: 2.3rem;
 
-$headerstyle: font-size(3rem);
+// $buttoncolors: (
+//   afterclick: color($colors, pink)
+// );
+
+ion-header ion-icon.back-button-icon.icon {
+  color: map-get($colors, light);
+}
+
+$toolbar-background: color($colors, orange);
+//$toolbar-color: color($colors, orange);
+
+ion-content {
+  background-image: url("https://i.imgur.com/d3BwGiO.png");
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

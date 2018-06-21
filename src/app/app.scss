@@ -15,19 +15,13 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 
+// .button
+// {
+//   //background-color: color($colors, orange);
+// }
 
-.safari{
-    background-color: color($colors, neworange);
-}
-
-h2{
-    text-align: center; 
-}
-
-h1{
-    text-align: center;
-}
-
-.toolbar-background {
-    background-color: color($colors, newpink);
-}
+// Then you can A. Make classes for your colors and do <button ion-button
+//  [ngClass]="buttonClass" (click)="someAction()"></button> B. Set the styling
+//   directly <button ion-button [style.backgroundColor]="buttonColor" 
+//   (click)="someAction()"></button> Or C. Add the colors you wish to use in 
+//   the colors array, and have buttonColor return the name of the color in that array.

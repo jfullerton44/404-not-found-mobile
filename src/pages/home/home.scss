@@ -5,12 +5,11 @@ page-home {
         background-color: transparent;
         background-repeat: no-repeat;
         background-size:cover;
-
     }
 
     .button {
         margin-top: 10%;
-        background-color: color($colors, newpink);
+        //background-color: color($colors, orange);
         font-size: 2.5rem;
     }
 
@@ -19,18 +18,19 @@ page-home {
         margin-bottom: 20%;
         font-family: BebasBold;
         font-size: 8.5rem;
-        text-shadow: 2px 2px color($colors, newpink);
+        text-shadow: 2px 2px 3px color($colors, orange);
         color: black;
     }
 
-     #subheader {
-        margin-bottom: 20%;
-        margin-top: 20%;
-        font-size: 2.7rem;
-        text-shadow: 2px 2px 3px color($colors, newpink);
-        color: black;
-     }
-    
+    // .button-effect
+    // {
+    //     background-color: color($colors, orange);
+    // }
+
+    // .afterclick
+    // {
+    //     background-color: color($colors, pink);
+    // }
 
     // $page-background: linear-gradient(to bottom, color($colors, neworange) 0%, color($colors, newpink) 50%, color($colors, newblue) 100%);
     // $background-color: transparent;
