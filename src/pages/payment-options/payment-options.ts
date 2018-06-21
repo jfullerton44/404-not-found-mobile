@@ -67,9 +67,9 @@ export class PaymentOptionsPage {
               this.sources.push(result.source);
               this.pm_idArr.push(card.id);
               this.indexArr.push(index);
+              index++;
             }
           });
-          index++;
         })
       },
       error => {

@@ -21,7 +21,8 @@
 <ion-content padding>
   <ion-list *ngFor = "let i of indexArr">
     <ion-item (click) = "closeModal(pm_idArr[i])">
-      {{sources[i].type}}: {{sources[i].card.last4}}
+      {{sources[i].card.brand}}
+      {{sources[i].card.last4}}
     </ion-item>
   </ion-list>
 </ion-content>
