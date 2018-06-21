@@ -49,7 +49,8 @@ export class PaymentOptionsPage {
   }
 
   getCards(){
-    this.http.get(this.configService.getBaseUrl() + `/users/${this.user.id}/payment_methods`).subscribe(
+    this.http.get(this.configService.getBaseUrl() + `/users/${this.user.id}/payment_methods`)
+    .subscribe(
       result => {
         let cards = result.json();
         console.log(cards);
