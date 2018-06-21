@@ -21,6 +21,7 @@ import { ProjectPage } from '../pages/project/project';
 import { ConfigService } from '../config.service';
 import { SettingsPage } from '../pages/settings/settings';
 import { CardPage } from '../pages/card/card';
+import { PaymentOptionsPage } from '../pages/payment-options/payment-options';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { CardPage } from '../pages/card/card';
     CharityListPage,
     ProjectPage,
     SettingsPage,
-    CardPage
+    CardPage,
+    PaymentOptionsPage
   ],
   imports: [
     BrowserModule,
@@ -60,7 +62,8 @@ import { CardPage } from '../pages/card/card';
     CharityListPage,
     ProjectPage,
     SettingsPage,
-    CardPage
+    CardPage,
+    PaymentOptionsPage
   ],
   providers: [
     StatusBar,
