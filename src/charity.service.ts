@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Charity } from '../../404-not-found-mobile/src/models/charity';
 import { Observable } from 'rxjs/Observable';
-// import { ArrayObservable } from 'rxjs/observable/ArrayObservable'
 import { Storage } from '@ionic/storage';
 import { Http } from "@angular/http";
 import { ConfigService } from '../src/config.service';
 import 'rxjs/add/observable/of';
+import { Charity } from './models/charity';
 
 @Injectable()
 export class CharityServiceProvider {
