@@ -14,6 +14,7 @@
 
 
 <ion-content padding>
+    <button ion-button class="safari" block (click)="reload()"> Refresh</button>
   <ion-card>
     <ion-card-header>
       Current Donation Distribution
@@ -36,8 +37,5 @@
       Date: {{donation.date}}
 
     </ion-card-content>
-  </ion-card>
-
-  <button ion-button class="safari" block (click)="reload()"> Reload </button>
-  
+  </ion-card>  
 </ion-content>
