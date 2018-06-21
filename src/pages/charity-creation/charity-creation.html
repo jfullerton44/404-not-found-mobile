@@ -14,5 +14,46 @@
 
 
 <ion-content padding>
+  <ion-item>
+    <ion-label floating>Charity Name</ion-label>
+    <ion-input type="text" [(ngModel)]='name'></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Short Description</ion-label>
+    <ion-input type="text" [(ngModel)]='description'></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Full Description</ion-label>
+    <ion-input type="text" [(ngModel)]='descriptionFull'></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Charity Website</ion-label>
+    <ion-input type="text" [(ngModel)]='website'></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Charity Email</ion-label>
+    <ion-input type="text" [(ngModel)]='email'></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Photo Link 1</ion-label>
+    <ion-input type="text"[(ngModel)]='photoLink'></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Photo Link 2</ion-label>
+    <ion-input type="text"[(ngModel)]='photoLink2'></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label floating>Charity Phone Number</ion-label>
+    <ion-input type="text"[(ngModel)]='phone'></ion-input>
+  </ion-item>
+
+  <button ion-button class="safari" block (click)="registerNewCharity()"> Submit </button>
 
 </ion-content>
