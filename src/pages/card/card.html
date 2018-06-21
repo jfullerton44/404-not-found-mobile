@@ -14,10 +14,12 @@
 
 
 <ion-content padding>
+  <h1>Payment Options</h1>
+  <hr>
   <ion-list *ngFor = "let source of sources">
-    <ion-item>
-      <b>Card Type: </b>{{source.type}}<br>
-      Ends with {{source.card.last4}}
+    <ion-item outline>
+      <b>Card Type: </b>{{source.card.brand}}<br>
+      <h4>Ends with {{source.card.last4}}</h4>
     </ion-item>
   </ion-list>
 </ion-content>
