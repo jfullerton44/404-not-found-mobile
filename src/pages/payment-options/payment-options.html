@@ -19,10 +19,11 @@
 
 
 <ion-content padding>
+  <h2>Select your method of payment</h2>
   <ion-list *ngFor = "let i of indexArr">
     <ion-item (click) = "closeModal(pm_idArr[i])">
-      {{sources[i].card.brand}}
-      {{sources[i].card.last4}}
+      {{sources[i].card.brand}}<br>
+      ***************{{sources[i].card.last4}}<hr>
     </ion-item>
   </ion-list>
 </ion-content>
