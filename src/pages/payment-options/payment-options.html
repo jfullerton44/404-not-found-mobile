@@ -4,7 +4,7 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header class="page-headers">
+<ion-header no-border class="page-headers">
 
   <ion-navbar>
     <ion-title>Payment Method</ion-title>
@@ -18,7 +18,7 @@
 </ion-header>
 
 <ion-content padding>
-  Select your method of payment:
+    <ion-card class="list-card-style">Select your method of payment:</ion-card>
   <ion-list *ngFor = "let i of indexArr">
     <ion-item (click) = "closeModal(pm_idArr[i])">
       {{sources[i].card.brand}}<br>
