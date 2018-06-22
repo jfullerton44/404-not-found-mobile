@@ -23,6 +23,7 @@ export class ExplorePage {
   jwt: string;
 
   public charities: Array<Charity>=[];
+  private currentColor: string;
 
   constructor(
     public navCtrl: NavController,
@@ -46,8 +47,6 @@ export class ExplorePage {
       }
     );
   }
-
-
 
   ionViewDidLoad() {
   }

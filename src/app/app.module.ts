@@ -45,10 +45,18 @@ import { CharityServiceProvider } from '../charity.service';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
     HttpModule,
-    IonicStorageModule.forRoot()
-  ],
+    IonicStorageModule.forRoot(),
+    IonicModule.forRoot(MyApp, {
+      backButtonText: '  ',
+      iconMode: 'ios',
+      modalEnter: 'modal-slide-in',
+      modalLeave: 'modal-slide-out',
+      tabsPlacement: 'bottom',
+      pageTransition: 'ios-transition',
+      activator: 'ripple',
+    },
+    )],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,

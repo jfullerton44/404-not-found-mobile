@@ -1,25 +1,25 @@
-<ion-header class="safari">
+<ion-header no-border class="page-headers">
   <ion-navbar>
     <ion-title>Explore</ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
-  <h1>
-    Explore all of our charities to decide what cause is the most important to you.
-  </h1>
-  <ion-card ion-item *ngFor="let charity of charities">
-    <ion-card-header>
-      {{charity.name}}
+  <p>
+    Each animal represents a charity that you can support. <br> Donate to collect animals and watch you collection grow!
+  </p>
+  <ion-card class="card-style" ion-item *ngFor="let charity of charities">
+      <img class="card-image" src="../../assets/imgs/png/octopus.png"/>
+      <!-- <img src={{charity.photoLink}}/> -->
+    <ion-card-header class="card-header"r>
+      Supporting {{charity.name}}
     </ion-card-header>
-    <img src={{charity.photoLink}}/>
+    
     <ion-card-content>
       {{charity.desciption}}
-      <button ion-button class="safari" block (click)="navigateToPage(charity)"> More Info </button>
+      <button ion-button small (click)="navigateToPage(charity)"> More Info </button>
     </ion-card-content>
   </ion-card>
-
-
+ 
 </ion-content>
