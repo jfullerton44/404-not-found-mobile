@@ -1,18 +1,13 @@
 page-charity-list{
-    .img{
-            width: 100%;
+    .card-style {
+        background-color: transparent; 
+        box-shadow: none !important;
+        padding: 0;
     }
-    .item-md h2{
-        text-align: left;
-        font-weight: bold;
-        font-size: 2rem;
-        display: inline-block;
-    }
-    .item-md h3{
-        font-size: 1rem;
-    }
-    .item-md img{
-        width: 10rem;
-        height: 10rem;
+    .card-image
+    {
+       width: 70%;
+        margin-left: auto;
+        margin-right: auto;
     }
 } 

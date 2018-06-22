@@ -4,23 +4,35 @@
     </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content padding>
     <ion-searchbar class="search-style" [(ngModel)]="searchText" [formControl]="searchControl" (ionInput)="onSearchInput()"></ion-searchbar>
     <div *ngIf="searching" class="spinner-container">
         <ion-spinner name="bubbles"></ion-spinner>
     </div>
     <hr>
-    <ion-list *ngFor="let charity of sortedCharities" style="margin:0">
-        <div class="charity">
-            <ion-item no-lines (click)="navigateToProjects(charity)">
-                <img [src]=charity.photoLink item-start>
-                <h2>{{charity.name}}</h2>
-                <br>
-                <h3 text-wrap>{{charity.description}}</h3>
-            </ion-item>
-            <!-- <ion-icon name="star" style="float:left; padding-left: 5%">{{numProjects[i]}}</ion-icon>-->
-            <!-- <ion-icon item-end name="heart" style="float:right; padding-right: 5%">{{charity.numberOfDonations}}</ion-icon>  -->
-            <hr style="clear: both">
-        </div>
+    <ion-list *ngFor="let charity of sortedCharities">
+        <ion-card class="card-style" (click)="navigateToProjects(charity)">
+                <ion-card-header >{{charity.name}}</ion-card-header>
+            <img class="card-image" [src]=charity.photoLink item-start>
+            <br>
+            <br>
+            <p>{{charity.description}}</p>
+        </ion-card>
+        <!-- <ion-icon name="star" style="float:left; padding-left: 5%">{{numProjects[i]}}</ion-icon>-->
+        <!-- <ion-icon item-end name="heart" style="float:right; padding-right: 5%">{{charity.numberOfDonations}}</ion-icon>  -->
+        <hr style="clear: both">
     </ion-list>
 </ion-content>
+
+
+<!-- <ion-card class="card-style" ion-item *ngFor="let charity of charities">
+        <img class="card-image" (click)="navigateToPage(charity)" src={{charity.photoLink}}/>
+      <ion-card-header class="card-header"r>
+        Supporting {{charity.name}}
+      </ion-card-header>
+      
+      <ion-card-content>
+        {{charity.desciption}}
+        <button ion-button small (click)="navigateToPage(charity)"> More Info </button>
+      </ion-card-content>
+    </ion-card> -->
