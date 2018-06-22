@@ -8,28 +8,16 @@
 
 
 <ion-content padding>
+    <p>
   <img src={{charity.photoLink2}}>
-  <h1>{{charity.name}}</h1>
-  <h2>
-    Contact us at:
-  </h2>
-  <h3>{{charity.phone}}</h3>
-  <h3>{{charity.email}}</h3>
-  <h4>Visit our website <a href={{charity.website}}>here</a>
-  </h4>
-  <p>
-    {{charity.descriptionFull}}
-  </p>
-  <ion-list>
-    <ion-item>
-      <ion-label floating>Donation Amount</ion-label>
-      <ion-input type="number" [(ngModel)]="donationAmount"></ion-input>
-    </ion-item>
-  </ion-list>
-  <div padding>
-    <button ion-button block class="safari" (click)="presentConfirm()"> Donate Now! </button>
-  </div>
-  <h3>Projects</h3>
+  <!-- <h1>{{charity.name}}</h1> -->
+      {{charity.descriptionFull}}
+      <br><br>
+      Contact us at: {{charity.phone}} <br> {{charity.email}}
+      <br><br>
+      Visit our website <a href={{charity.website}}>here</a>
+    </p><br>
+    <p>Projects: <br> coming soon!</p><br>
   <ion-grid>
       <ion-row justify-content:start>
       <ion-col col-6 *ngFor="let p of projects">
@@ -45,4 +33,12 @@
       </ion-col>
       </ion-row>
     </ion-grid>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Donation Amount:</ion-label>
+      <ion-input type="number" [(ngModel)]="donationAmount"></ion-input>
+    </ion-item>
+  </ion-list>
+    <button ion-button block (click)="presentConfirm()"> Donate Now! </button>
 </ion-content>

@@ -1,12 +1,11 @@
 <ion-header no-border class="page-headers">
     <ion-navbar>
-        <ion-title>Charities</ion-title>
+        <ion-title>Browse Charities</ion-title>
     </ion-navbar>
 </ion-header>
 
 <ion-content>
-    <h1>Browse Charities</h1>
-    <ion-searchbar style="font-family: Poppins" [(ngModel)]="searchText" [formControl]="searchControl" (ionInput)="onSearchInput()"></ion-searchbar>
+    <ion-searchbar class="search-style" [(ngModel)]="searchText" [formControl]="searchControl" (ionInput)="onSearchInput()"></ion-searchbar>
     <div *ngIf="searching" class="spinner-container">
         <ion-spinner name="bubbles"></ion-spinner>
     </div>

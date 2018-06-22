@@ -39,7 +39,8 @@ $colors: (
   dark:       #222,
   orange:     #feac5e,
   pink:       #f9b2dd,
-  blue:       #4bc0c8
+  blue:       #4bc0c8,
+  darkgreen:  #1ca03b
 );
 
 
@@ -130,5 +131,8 @@ ion-content {
 .page-headers
 {
   background-color: color($colors, orange);
+}
 
+ion-header {
+  font-family: 'Bebas';
 }

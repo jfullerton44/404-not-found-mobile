@@ -10,8 +10,8 @@
     Each animal represents a charity that you can support. <br> Donate to collect animals and watch you collection grow!
   </p>
   <ion-card class="card-style" ion-item *ngFor="let charity of charities">
-      <img class="card-image" src="../../assets/imgs/png/octopus.png"/>
-      <!-- <img src={{charity.photoLink}}/> -->
+      <!-- <img class="card-image" src="../../assets/imgs/png/octopus.png"/> -->
+      <img class="card-image" (click)="navigateToPage(charity)" src={{charity.photoLink}}/>
     <ion-card-header class="card-header"r>
       Supporting {{charity.name}}
     </ion-card-header>

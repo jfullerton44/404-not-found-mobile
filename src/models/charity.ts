@@ -8,4 +8,6 @@ export class Charity {
     website: string;
     numberOfDonations: number;
     numberOfProjects: number;
+    // charityAnimal: string;
 }
+ 
