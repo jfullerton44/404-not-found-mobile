@@ -9,7 +9,7 @@
   <ion-card class="card-style" ion-item *ngFor="let charity of charities">
       <!-- <img class="card-image" src="../../assets/imgs/png/octopus.png"/> -->
       <img class="card-image" (click)="navigateToPage(charity)" src={{charity.photoLink}}/>
-    <ion-card-header class="card-header"r>
+    <ion-card-header class="card-header">
       Supporting {{charity.name}}
     </ion-card-header>
     

@@ -1,13 +1,17 @@
 page-charity-list{
-    .card-style {
-        background-color: transparent; 
+    .list-card-style {
+        background-color: rgba($color: white, $alpha: .8);; 
         box-shadow: none !important;
-        padding: 0;
+        padding: 2%;
     }
     .card-image
     {
        width: 70%;
         margin-left: auto;
         margin-right: auto;
+    }
+    .card-header
+    {
+        margin: 0;
     }
 } 

@@ -11,7 +11,7 @@
     </div>
     <hr>
     <ion-list *ngFor="let charity of sortedCharities">
-        <ion-card class="card-style" (click)="navigateToProjects(charity)">
+        <ion-card class="list-card-style" (click)="navigateToProjects(charity)">
                 <ion-card-header >{{charity.name}}</ion-card-header>
             <img class="card-image" [src]=charity.photoLink item-start>
             <br>
